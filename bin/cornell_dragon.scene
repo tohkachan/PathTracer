@@ -1,0 +1,84 @@
+<scene filename="cornell_dragon.ppm">
+    <windows i="1"/>
+    <camera>
+        <fov v="40.0"/>
+        <near_clip v="0.1"/>
+        <far_clip v="100.0"/>
+        <position x="-3.141592653" y="1.5707963265" z="6.5"/>
+    </camera>
+
+    <tracer type="sppm">
+        <spp i="1"/>
+        <depth i="20"/>
+        <roulete v="0.8"/>
+        <thread i="2"/>
+        <recurse i="4"/>
+        <gsize i="20000"/>
+        <gsample i="100"/>
+        <csize i="5000"/>
+        <csample i="50"/>
+        <radius v="0.08"/>
+    </tracer>
+
+    <material name="red" type="diffuse">
+        <R r="0.63" g="0.065" b="0.05"/>
+    </material>
+
+    <material name="green" type="diffuse">
+        <R r="0.14" g="0.45" b="0.091"/>
+    </material>
+
+    <material name="white" type="diffuse">
+        <R r="0.725" g="0.71" b="0.68"/>
+    </material>
+
+    <material name="light" type="diffuse">
+        <R r="0.65" g="0.65" b="0.65"/>
+    </material>
+
+    <material name="glass" type="glass">
+        <refractive_index v="2.2"/>
+        <R r="1.0" g="1.0" b="1.0"/>
+        <T r="1.0" g="1.0" b="1.0"/>
+    </material>
+
+    <mesh name="floor" filename="../models/cornellbox/floor.obj">
+        <position x="-2.2" y="-2.2" z="0.0"/>
+        <scale x="0.008" y="0.008" z="0.008"/>
+        <orientation x="0.0" y="0.0" z="0.0"/>
+    </mesh>
+
+    <mesh name="left" filename="../models/cornellbox/left.obj">
+        <position x="-2.2" y="-2.2" z="0.0"/>
+        <scale x="0.008" y="0.008" z="0.008"/>
+        <orientation x="0.0" y="0.0" z="0.0"/>
+    </mesh>
+
+    <mesh name="right" filename="../models/cornellbox/right.obj">
+        <position x="-2.2" y="-2.2" z="0.0"/>
+        <scale x="0.008" y="0.008" z="0.008"/>
+        <orientation x="0.0" y="0.0" z="0.0"/>
+    </mesh>
+
+    <mesh name="dragon" filename="../models/bunny/dragon.obj">
+        <position x="0.0" y="0.3" z="2.5"/>
+        <scale x="2.0" y="2.0" z="2.0"/>
+        <orientation x="0.0" y="0.0" z="0.0"/>
+    </mesh>
+
+    <mesh name="light" filename="../models/cornellbox/light.obj">
+        <position x="-2.2" y="-2.2" z="0.0"/>
+        <scale x="0.008" y="0.008" z="0.008"/>
+        <orientation x="0.0" y="0.0" z="0.0"/>
+    </mesh>
+
+    <light name="light" mesh="light">
+        <color r="47.8348" g="38.5664" b="31.0808"/>
+    </light>
+
+    <object type="mesh" material="glass" mesh="dragon"/>
+    <object type="mesh" material="white" mesh="floor"/>
+    <object type="mesh" material="red" mesh="left"/>
+    <object type="mesh" material="green" mesh="right"/>
+    <object type="light" material="light" light="light" mesh="light"/>
+</scene>

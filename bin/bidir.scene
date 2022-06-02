@@ -1,0 +1,125 @@
+<scene filename="bidir.ppm">
+    <windows i="0"/>
+    <camera>
+        <fov v="40.0"/>
+        <near_clip v="0.1"/>
+        <far_clip v="100.0"/>
+        <position x="0.0" y="3.0" z="5.9"/>  
+    </camera>
+ 
+    <tracer type="bdpt">
+        <spp i="64"/>
+        <depth i="16"/>
+        <roulete v="0.8"/>
+        <thread i="4"/>
+        <debug_s i="-1"/>
+        <debug_t i="-1"/>
+        <debug_no_mis i="0"/>
+    </tracer>
+
+    <material name="wood" type="diffuse">
+        <R r="0.32962962985" g="0.257976263762" b="0.150291711092"/>
+    </material>
+
+    <material name="light" type="diffuse">
+        <R r="0.5" g="0.5" b="0.5"/>
+    </material>
+
+    <material name="plastic" type="plastic">
+        <refractive_index v="1.5"/>
+        <R r="0.616" g="0.4752" b="0.352"/>
+        <alpha v="0.1"/>
+    </material>
+
+    <material name="glass" type="glass">
+        <refractive_index v="1.5"/>
+        <R r="1.0" g="1.0" b="1.0"/>
+        <T r="1.0" g="1.0" b="1.0"/>
+    </material>
+
+    <mesh name="0" filename="../veach-bidir/geometry/bidir_0.ply">
+        <position x="0.6" y="0.6" z="0.2"/>
+        <scale x="1.0" y="1.0" z="1.0"/>
+        <orientation x="0.0" y="0.0" z="-0.15"/>
+    </mesh>
+
+    <mesh name="1" filename="../veach-bidir/geometry/bidir_1.ply">
+        <position x="0.6" y="0.6" z="0.2"/>
+        <scale x="1.0" y="1.0" z="1.0"/>
+        <orientation x="0.0" y="0.0" z="-0.15"/>
+    </mesh>
+
+    <mesh name="2" filename="../veach-bidir/geometry/bidir_2.ply">
+        <position x="0.6" y="0.6" z="0.2"/>
+        <scale x="1.0" y="1.0" z="1.0"/>
+        <orientation x="0.0" y="0.0" z="-0.15"/>
+    </mesh>
+
+    <mesh name="3" filename="../veach-bidir/geometry/bidir_3.ply">
+        <position x="0.6" y="0.6" z="0.2"/>
+        <scale x="1.0" y="1.0" z="1.0"/>
+        <orientation x="0.0" y="0.0" z="-0.15"/>
+    </mesh>
+
+    <mesh name="4" filename="../veach-bidir/geometry/bidir_4.ply">
+        <position x="0.6" y="0.6" z="0.2"/>
+        <scale x="1.0" y="1.0" z="1.0"/>
+        <orientation x="0.0" y="0.0" z="-0.15"/>
+    </mesh>
+
+    <mesh name="5" filename="../veach-bidir/geometry/bidir_5.ply">
+        <position x="0.6" y="0.6" z="0.2"/>
+        <scale x="1.0" y="1.0" z="1.0"/>
+        <orientation x="0.0" y="0.0" z="-0.15"/>
+    </mesh>
+
+    <mesh name="light1" filename="../veach-bidir/geometry/bidir_6.ply">
+        <position x="0.6" y="0.6" z="0.2"/>
+        <scale x="1.0" y="1.0" z="1.0"/>
+        <orientation x="0.0" y="0.0" z="-0.15"/>
+    </mesh>
+
+    <mesh name="light2" filename="../veach-bidir/geometry/bidir_7.ply">
+        <position x="0.6" y="0.6" z="0.2"/>
+        <scale x="1.0" y="1.0" z="1.0"/>
+        <orientation x="0.0" y="0.0" z="-0.15"/>
+    </mesh>
+
+    <mesh name="8" filename="../veach-bidir/geometry/bidir_8.ply">
+        <position x="0.6" y="0.6" z="0.2"/>
+        <scale x="1.0" y="1.0" z="1.0"/>
+        <orientation x="0.0" y="0.0" z="-0.15"/>
+    </mesh>
+
+    <mesh name="9" filename="../veach-bidir/geometry/bidir_9.ply">
+        <position x="0.6" y="0.6" z="0.2"/>
+        <scale x="1.0" y="1.0" z="1.0"/>
+        <orientation x="0.0" y="0.0" z="-0.15"/>
+    </mesh>
+
+    <mesh name="10" filename="../veach-bidir/geometry/bidir_10.ply">
+        <position x="0.6" y="0.6" z="0.2"/>
+        <scale x="1.0" y="1.0" z="1.0"/>
+        <orientation x="0.0" y="0.0" z="-0.15"/>
+    </mesh>
+
+    <light name="light1" mesh="light1">
+        <color r="6999.999881" g="5450.000167" b="3630.000055"/>
+    </light>
+
+    <light name="light2" mesh="light2">
+        <color r="500.0" g="500.0" b="500.0"/>
+    </light>
+
+    <object type="mesh" material="glass" mesh="0"/>
+    <object type="mesh" material="plastic" mesh="1"/>
+    <object type="mesh" material="wood" mesh="2"/>
+    <object type="mesh" material="wood" mesh="3"/>
+    <object type="mesh" material="wood" mesh="4"/>
+    <object type="mesh" material="light" mesh="5"/>
+    <object type="light" material="light" light="light1" mesh="light1"/>
+    <object type="light" material="light" light="light2" mesh="light2"/>
+    <object type="mesh" material="plastic" mesh="8"/>
+    <object type="mesh" material="wood" mesh="9"/>
+    <object type="mesh" material="wood" mesh="10"/>
+</scene>
